@@ -1,14 +1,46 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div>
+      <Slide id="nav">
+        <router-link to="/">
+          <b-icon
+                  pack="fas"
+                  icon="home"
+                  size="is-medium"
+                  type="is-info">
+          </b-icon>
+          <div class="icon-name">
+            Home
+          </div>
+        </router-link>
+        <router-link to="/about">
+          <b-icon
+                  pack="fas"
+                  icon="info-circle"
+                  size="is-medium"
+                  type="is-info">
+          </b-icon>
+          <div class="icon-name">
+            About
+          </div>
+        </router-link>
+      </Slide>
     </div>
     <div id="section">
       <router-view/>
     </div>
   </div>
 </template>
+
+<script>
+  import { Slide } from 'vue-burger-menu';
+
+  export default {
+    components: {
+      Slide,
+    },
+  };
+</script>
 
 <style>
   #app {
@@ -31,4 +63,23 @@
   #nav a.router-link-exact-active {
     color: #42b983;
   }
+
+  #nav .bm-menu {
+    background: #1c1c1c;
+  }
+
+  #nav .bm-burger-bars {
+    background: limegreen;
+  }
+
+  #nav .bm-cross {
+    left: -20%;
+    top: 20%;
+  }
+
+  #nav .icon-name {
+    padding-left: 10%;
+    padding-top: 1%;
+  }
+
 </style>
