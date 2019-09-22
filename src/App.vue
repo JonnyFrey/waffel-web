@@ -1,31 +1,6 @@
 <template>
   <div id="app">
-    <div>
-      <Slide id="nav">
-        <router-link to="/">
-          <b-icon
-                  pack="fas"
-                  icon="home"
-                  size="is-medium"
-                  type="is-info">
-          </b-icon>
-          <div class="icon-name">
-            Home
-          </div>
-        </router-link>
-        <router-link to="/about">
-          <b-icon
-                  pack="fas"
-                  icon="info-circle"
-                  size="is-medium"
-                  type="is-info">
-          </b-icon>
-          <div class="icon-name">
-            About
-          </div>
-        </router-link>
-      </Slide>
-    </div>
+    <home-menu-bar/>
     <div id="section">
       <router-view/>
     </div>
@@ -33,11 +8,12 @@
 </template>
 
 <script>
-  import { Slide } from 'vue-burger-menu';
+  import HomeMenuBar from '@/components/HomeMenuBar';
 
   export default {
+    name: 'App',
     components: {
-      Slide,
+      HomeMenuBar,
     },
   };
 </script>
@@ -49,37 +25,6 @@
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     background: #2f3f3f;
-    height: 100vw;
+    height: 100vh;
   }
-  #nav {
-    padding: 30px;
-  }
-
-  #nav a {
-    font-weight: bold;
-    color: #893960;
-  }
-
-  #nav a.router-link-exact-active {
-    color: #42b983;
-  }
-
-  #nav .bm-menu {
-    background: #1c1c1c;
-  }
-
-  #nav .bm-burger-bars {
-    background: limegreen;
-  }
-
-  #nav .bm-cross {
-    left: -20%;
-    top: 20%;
-  }
-
-  #nav .icon-name {
-    padding-left: 10%;
-    padding-top: 1%;
-  }
-
 </style>
