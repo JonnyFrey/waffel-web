@@ -24,7 +24,11 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    background: #2f3f3f;
     height: 100vh;
   }
+
+  html {
+    background-color: #2f3f3f !important;
+  }
+
 </style>
